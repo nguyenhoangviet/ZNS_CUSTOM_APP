@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="vendor/salesforce-lightning-design-system/styles/salesforce-lightning-design-system.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="//code.jquery.com/git/jquery-git.min.js"></script>
+    <script type="text/javascript" src="js/require.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var config = {
+                baseUrl: 'js'
+            };
+
+            var dependencies = [
+                'customActivity'
+            ];
+
+            require(config, dependencies);
+        })();
+    </script>  
+     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
+     <script>
+      $(document).ready(function () {   
+           $('body').on('change','#title', function() {
+                $('#pre-title').html(this.value);
+           });
+           $('body').on('change','#message', function() {
+                $('#pre-subtitle').html(this.value);
+           });
+           $('body').on('change','#urlimg', function() {
+                $('#pre-urlimg').attr('src',this.value);
+           });
+           $('body').on('change','#url', function() {
+                $("#preview-url").attr("href", this.value);
+           });
+       }); 
+     
+     </script>
+   
+</head>
+
+<body>
+    <div class="container">
+        <h2>Zalo Messages</h2>
+        <form>
+          <div class="form-group" style="width: 50%;float: left;">
+            <!-- <textarea class="form-control" rows="1" id="title"></textarea>
+            <textarea class="form-control" rows="1" id="message"></textarea>
+            <textarea class="form-control" rows="1" id="urlimg"></textarea>
+            <textarea class="form-control" rows="1" id="url"></textarea> -->
+
+            <label for="title">Title</label><br>
+            <input type="text" id="title" name="title" value="" placeholder ="Title"><br>
+            <label for="message">Subtitle</label><br>
+            <textarea class="form-control" rows="2" id="message"></textarea><br> 
+            <!-- <input type="text" id="message" name="message" value="" placeholder ="Subtitle"><br> -->
+
+            <label for="urlimg">Thumbnail image</label><br>
+            <input type="text" id="urlimg" name="urlimg" value="" placeholder ="Thumbnail image"><br>
+            <label for="url">Url</label><br>
+            <input type="text" id="url" name="url" value="" placeholder ="url"><br>
+            <br><p style="color: green;">%name%:</p> Get value of name field<br>
+            Example: Chào %name% !!!
+            <!-- <input type="text" id="show_selected" name="show_selected" value="" placeholder ="url"><br> -->
+        </div>
+            
+        </form>
+        <h2>Preview</h2>
+        <div id="preview-zns" style="float: left;max-width: 230px;background: #e3e7f0;">
+            <img style="width: 230px;background:white;" alt="" src="https://i.imgur.com/aXi1kj9.png">
+            <a id="preview-url" href="https://developers.zalo.me/docs/api/official-account-api-147" style="font-size: 8px;color: black;text-decoration: none;height: auto;display: block;background: #fefefe;margin: 15px;border-radius: 11px;">
+            
+<img id="pre-urlimg" src="https://stc-developers.zdn.vn/images/bg_1.jpg" alt="" style="width: 100%;border-radius: 11px 11px 0 0;"><div id="pre-title" style="text-decoration: none;font-weight: 600;margin: 0 6px;">Chào Bạn</div>
+            <div id="pre-subtitle" style="font-weight: 400;margin: 0 6px;padding-bottom:9px;color: #84858b;">There Is No Limit To What You Can Accomplish Using Zalo</div>
+            
+
+
+         </a><img src="https://i.imgur.com/N1hWSWM.png" alt="" style="width: 230px;margin-top: 86px;bottom: 0;">
+        </div>
+</body>
+</html>
+ 
