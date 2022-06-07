@@ -101,33 +101,33 @@ exports.execute = function (req, res) {
       // var title = decoded.inArguments[0].title.replace('%name%', name);
       var title = decoded.inArguments[0].title.replace('%name%', name)
 
-      axios({
-        method: 'post',
-        url: 'https://openapi.zalo.me/v2.0/oa/message?access_token=' + znsToken,
-        data: {
-          recipient: {
-            user_id: zaloId,
-          },
-          message: {
-            attachment: {
-              type: 'template',
-              payload: {
-                template_type: 'list',
-                elements: [
-                  {
-                    title: title,
-                    subtitle: message,
-                    image_url: urlImage,
-                    default_action: {
-                      type: 'oa.open.url',
-                      url: url,
-                    },
-                  },
-                ],
-              },
-            },
-          },
-        },
+//       axios({
+//         method: 'post',
+//         url: 'https://openapi.zalo.me/v2.0/oa/message?access_token=' + znsToken,
+//         data: {
+//           recipient: {
+//             user_id: zaloId,
+//           },
+//           message: {
+//             attachment: {
+//               type: 'template',
+//               payload: {
+//                 template_type: 'list',
+//                 elements: [
+//                   {
+//                     title: title,
+//                     subtitle: message,
+//                     image_url: urlImage,
+//                     default_action: {
+//                       type: 'oa.open.url',
+//                       url: url,
+//                     },
+//                   },
+//                 ],
+//               },
+//             },
+//           },
+//         },
       })
         .then(function (response) {
           console.log(response)
