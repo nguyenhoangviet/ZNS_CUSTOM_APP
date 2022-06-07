@@ -89,6 +89,7 @@ exports.execute = function (req, res) {
       // decoded in arguments
       var decodedArgs = decoded.inArguments[0]
       var decodedOutArgs = decoded.outArguments[0]
+      console.log(decodedArgs,decodedOutArgs)
       var znsToken = config.Zalo.token
       var znsUrl =
         'https://openapi.zalo.me/v2.0/oa/message?access_token=' + znsToken
